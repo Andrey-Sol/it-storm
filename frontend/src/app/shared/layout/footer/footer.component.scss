@@ -1,0 +1,114 @@
+@import "../../../../assets/styles/variables";
+
+footer.footer {
+  background-color: #B9D5FD;
+  padding-top: 40px;
+  padding-bottom: 54px;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+
+  .container {
+
+    .footer-nav {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+
+      .logo {
+        margin-right: 40px;
+      }
+
+      .footer-menu ul  {
+        display: flex;
+        justify-content: space-between;
+        min-width: 383px;
+        list-style: none;
+        padding-inline-start: 0;
+
+        li a {
+          color: $main-text-color;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .footer-contacts {
+      display: flex;
+      margin-bottom: 6px;
+
+      .footer-contacts-item {
+        margin-right: 60px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &.footer-contacts-address {
+          width: 253px;
+        }
+
+        &.footer-contacts-phone {
+          width: 153px;
+
+          .footer-contacts-item-body {
+
+            a {
+              color: $main-text-color;
+              text-decoration: none;
+            }
+
+            .call-btn {
+              margin-top: 10px;
+              padding: 10px 20px;
+              min-width: 153px;
+              font-size: 12px;
+            }
+          }
+        }
+
+        &.footer-contacts-email {
+
+          .footer-contacts-item-body {
+            font-size: 14px;
+          }
+        }
+
+        &.footer-contacts-socials {
+
+          .footer-contacts-item-header {
+            margin-bottom: 15px;
+          }
+
+          .footer-contacts-item-body {
+            height: 24px;
+
+            a {
+              margin-right: 12px;
+
+              &:last-child {
+                margin-right: 0;
+              }
+            }
+          }
+        }
+
+        .footer-contacts-item-header {
+          color: $blue-text-color;
+          margin-bottom: 10px;
+          font-weight: 500;
+        }
+
+        .footer-contacts-item-body {
+          line-height: 130%;
+          color: $main-text-color;
+        }
+      }
+    }
+
+    .footer-rights {
+      color: $blue-text-color;
+    }
+  }
+}

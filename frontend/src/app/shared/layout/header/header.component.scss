@@ -40,18 +40,20 @@ header.header {
       text-decoration: none;
     }
 
-    .header-profile a {
-      display: flex;
-      align-items: center;
-      color: $main-text-color;
-      text-decoration: none;
-      cursor: pointer;
+    .header-profile {
+      margin-left: auto;
 
-      svg {
-        margin-right: 8px;
+      a {
+        display: flex;
+        align-items: center;
+        color: $main-text-color;
+        text-decoration: none;
+        cursor: pointer;
+
+        svg {
+          margin-right: 8px;
+        }
       }
-
-      //.mat-menu-panel {}
     }
   }
 }

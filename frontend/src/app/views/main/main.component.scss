@@ -1,0 +1,415 @@
+@import "../../../assets/styles/variables";
+@import "../../../assets/styles/mixins";
+
+.main {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  margin-bottom: 120px;
+
+  .container {
+
+    .main-slider {
+      position: relative;
+
+      .banner {
+        height: 500px;
+        padding-top: 86px;
+        padding-left: 80px;
+        box-sizing: border-box;
+
+        &.banner-offer {
+          background-image: url("../../../assets/images/banner/banner1.png");
+          padding-top: 100px;
+
+          .banner-title {
+            margin-bottom: 40px;
+          }
+        }
+
+        &.banner-promo {
+          background-image: url("../../../assets/images/banner/banner2.png");
+        }
+
+        &.banner-news {
+          background-image: url("../../../assets/images/banner/banner3.png");
+        }
+
+        .banner-type {
+          font-weight: 600;
+          font-size: 12px;
+          letter-spacing: 0.4em;
+          text-transform: uppercase;
+          color: $blue-text-color;
+        }
+
+        .banner-title {
+          font-family: 'Lora', sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 50px;
+          line-height: 130%;
+          color: #FFFFFF;
+          width: 610px;
+          margin-bottom: 20px;
+
+          span {
+            color: $blue-text-color;
+          }
+        }
+
+        .banner-text {
+          font-weight: 400;
+          font-size: 24px;
+          line-height: 130%;
+          color: #FFFFFF;
+          width: 456px;
+          margin-bottom: 50px;
+        }
+
+        .banner-button {
+          width: 163px;
+          height: 51px;
+          padding: 15px 33px;
+          font-weight: 400;
+        }
+
+      }
+
+      .main-slider-arrows {
+        display: flex;
+
+        a {
+          top: calc(50% - 5px);
+          display: flex;
+          position: absolute;
+          cursor: pointer;
+          z-index: 2;
+
+          &.move-backward {
+            left: 10px;
+          }
+
+          &.move-forward {
+            right: 10px;
+          }
+        }
+
+        //.owl-theme .owl-dots .owl-dot.active span {
+        //  background: $blue-text-color;
+        //}
+        //
+        //.owl-theme .owl-nav.disabled+.owl-dots {
+        //  margin-top: 0 !important;
+        //  top: 30px;
+        //  position: absolute;
+        //  background: $blue-text-color;
+        //}
+
+
+      }
+
+    }
+
+  }
+}
+
+
+
+
+
+.services {
+  margin-bottom: 120px;
+
+  .container {
+
+    .services-title {
+      @include head-lora-38;
+      margin-bottom: 40px;
+    }
+
+    .service-cards {
+      display: flex;
+
+      .service-card {
+        width: 290px;
+        height: 498px;
+        margin-right: 26px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        .service-card-image {
+          width: 291px;
+          height: 291px;
+          border-radius: 5px;
+          margin-bottom: 15px;
+        }
+
+        .service-card-name {
+          @include head-montserrat-20;
+          margin-bottom: 10px;
+        }
+
+        .service-card-description {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 130%;
+          color: $main-text-color;
+          min-height: 90px;
+          margin-bottom: 15px;
+        }
+
+        .service-card-info {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .service-card-price {
+            font-weight: 600;
+            font-size: 20px;
+            color: $blue-text-color;
+          }
+
+          .service-card-button {
+            width: 163px;
+            height: 51px;
+            padding: 15px 33px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}
+
+.about {
+  margin-bottom: 120px;
+
+  .container {
+    display: flex;
+
+    .about-image {
+      margin-right: 68px;
+    }
+
+    .about-block {
+      font-size: 14px;
+
+      .about-info {
+        margin-bottom: 40px;
+
+        .about-info-title {
+          @include head-lora-38;
+          margin-bottom: 20px;
+        }
+
+        .about-info-text {
+          color: #1E1A2B;
+
+          line-height: 130%;
+          max-width: 633px;
+
+          span {
+            font-weight: 500;
+          }
+        }
+      }
+
+      .info-advantages {
+
+        .info-advantages-title {
+          font-family: 'Lora', sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 26px;
+          color: $blue-text-color;
+          margin-bottom: 20px;
+        }
+
+        .advantages {
+          display: grid;
+          grid-template-columns: repeat(2, 316px);
+          column-gap: 71px;
+          row-gap: 20px;
+
+          .advantage {
+            display: flex;
+            align-items: center;
+
+            .advantage-number {
+              margin-right: 20px;
+
+              .advantage-number-background {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: #B9D5FD;
+                position: relative;
+
+                span {
+                  position: absolute;
+                  left: 6px;
+                  top: -18px;
+                  font-family: 'Lora', sans-serif;
+                  font-style: normal;
+                  font-weight: 500;
+                  font-size: 50px;
+                  color: $blue-text-color;
+                }
+                .first {
+                  left: 10px;
+                }
+              }
+            }
+            .advantage-text {
+              height: 90px;
+
+              span {
+                font-weight: 500;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.popular-articles {
+  margin-bottom: 120px;
+
+  .container {
+
+    .popular-articles-title {
+      @include head-lora-38;
+      margin-bottom: 40px;
+    }
+
+    .popular-articles-block {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+
+    .popular-articles-link {
+      @include head-montserrat-20;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      cursor: pointer;
+      text-decoration: none;
+
+      svg {
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+.reviews {
+  margin-bottom: 120px;
+
+  .container {
+
+    .reviews-title {
+      @include head-lora-38;
+      margin-bottom: 20px;
+    }
+
+    .reviews-slider {
+      position: relative;
+
+      .review-item {
+        width: 396px;
+        height: 267px;
+        padding: 30px;
+        border: 2px solid $blue-text-color;
+        border-radius: 10px;
+        box-sizing: border-box;
+
+        .review-item-head {
+          display: flex;
+          align-items: center;
+
+          .review-item-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-position: center;
+            background-size: cover;
+            margin-right: 26px;
+          }
+
+          .review-item-name {
+            font-weight: 600;
+            font-size: 18px;
+            color: $blue-text-color;
+          }
+        }
+
+        .review-item-text {
+          margin-top: 15px;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 140%;
+          color: $main-text-color;
+        }
+      }
+
+      .reviews-arrows {
+        display: flex;
+
+        a {
+          top: calc(50% - 5px);
+          display: flex;
+          position: absolute;
+          cursor: pointer;
+
+          &.move-backward {
+            left: -25px;
+          }
+
+          &.move-forward {
+            right: -25px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.contacts {
+  margin-bottom: 120px;
+
+  .container {
+    display: flex;
+
+    .location-block {
+      margin-right: 26px;
+    }
+
+    .contacts-block {
+      @include text-montserrat-14;
+
+      .contacts-title {
+        @include head-lora-38;
+        margin-bottom: 20px;
+      }
+
+      .contacts-item {
+        margin-bottom: 20px;
+
+        .contacts-item-head {
+          @include head-montserrat-20;
+          line-height: 130%;
+          margin-bottom: 10px;
+
+        }
+        .contacts-item-body a {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}

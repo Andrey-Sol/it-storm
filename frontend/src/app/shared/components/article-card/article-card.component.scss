@@ -1,0 +1,54 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+
+.article-card {
+  width: 292px;
+  height: 571px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .article-card-category {
+    padding: 10px 18px;
+    position: absolute;
+    right: 9px;
+    top: 10px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 11px;
+    color: $blue-text-color;
+  }
+
+  .article-card-image {
+    width: 291px;
+    min-height: 291px;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 15px;
+  }
+
+  .article-card-title {
+    @include head-montserrat-20;
+    margin-bottom: 20px;
+  }
+
+  .article-card-description {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    color: $main-text-color;
+    margin-bottom: 25px;
+    overflow: hidden;
+  }
+
+  .article-card-link {
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration-line: underline;
+    color: $blue-text-color;
+    margin-top: auto;
+    cursor: pointer;
+  }
+}

@@ -31,7 +31,7 @@ html, body {
   border: 0;
   font-family: 'Montserrat',sans-serif;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
   color: #FFFFFF;
   box-sizing: border-box;
@@ -48,4 +48,13 @@ html, body {
   font-size: 14px;
   margin-left: 5px;
   margin-top: 2px;
+}
+
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: $blue-text-color;
+}
+
+.mat-dialog-container {
+  padding: 0 !important;
+  border-radius: 10px !important;
 }

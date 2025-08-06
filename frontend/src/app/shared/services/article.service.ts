@@ -13,14 +13,22 @@ export class ArticleService {
 
   constructor(private http: HttpClient) { }
 
-  getPopularArticles(): Observable<ArticleType[]> {
-    return this.http.get<ArticleType[]>(environment.api + 'articles/top');
+  getArticle(url: string): Observable<ArticleType> {
+    return this.http.get<ArticleType>(environment.api + 'articles/' + url)
   }
 
   getArticles(params: ActiveParamsType):Observable<{ count: number, pages: number, items: ArticleType[] }> {
     return this.http.get<{ count: number, pages: number, items: ArticleType[] }>(environment.api + 'articles', {
       params: params
     });
+  }
+
+  getPopularArticles(): Observable<ArticleType[]> {
+    return this.http.get<ArticleType[]>(environment.api + 'articles/top');
+  }
+
+  getRelatedArticles(url: string): Observable<ArticleType[]> {
+    return this.http.get<ArticleType[]>(environment.api + 'articles/related/' + url);
   }
 
   getCategories(): Observable<CategoryType[]> {

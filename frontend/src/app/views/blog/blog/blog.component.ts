@@ -18,7 +18,7 @@ export class BlogComponent implements OnInit {
   categories: CategoryType[] = [];
   activeParams: ActiveParamsType = {categories: []};
   appliedFilters: AppliedFilterType[] = [];
-  filterOpen = false;
+  filterOpen: boolean = false;
   pages: number[] = [];
 
   constructor(private articleService: ArticleService,
@@ -27,7 +27,6 @@ export class BlogComponent implements OnInit {
 
   @HostListener('document:click', ['$event'])
   click(event: Event) {
-    console.log(event.target);
     if (this.filterOpen && (event.target as HTMLElement).className.indexOf('blog-filter') === -1) {
       this.filterOpen = false;
     } else if ((event.target as HTMLElement).className.includes('blog-filter-body')

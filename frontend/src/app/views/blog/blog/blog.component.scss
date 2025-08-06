@@ -32,7 +32,6 @@
           color: $blue-text-color;
           margin-right: 25px;
 
-          span {}
           a {
             text-decoration: none;
             cursor: pointer;
@@ -70,7 +69,7 @@
           display: none;
           padding: 12px 15px 12px 23px;
           background: #FFFFFF;
-          border: 1px solid #B9D5FD;
+          border: 1px solid $light-blue-color;
           border-radius: 0 0 5px 5px;
           color: #BEBEBE;
 
@@ -119,7 +118,7 @@
 
           .blog-filter-head {
             color: $main-text-color;
-            background: #B9D5FD;
+            background: $light-blue-color;
             border-radius: 5px 5px 0 0;
             padding-right: 23px;
           }
@@ -148,6 +147,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
          svg {
            //fill: #B9D5FD;
          }
@@ -177,7 +177,7 @@
           color: $main-text-color;
 
           &.active {
-            color: #B9D5FD;
+            color: $light-blue-color;
           }
 
           &:last-child {

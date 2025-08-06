@@ -26,8 +26,7 @@ export class SignupComponent implements OnInit {
               private _snackBar: MatSnackBar,
               private router: Router) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   signup() {
     if (this.signupForm.valid && this.signupForm.value.name && this.signupForm.value.email

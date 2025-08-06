@@ -1,0 +1,60 @@
+<div class="modal">
+  <div class="modal-close" [mat-dialog-close]="">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="1.93562" y1="2.64999" x2="13.9564" y2="14.6708" stroke="#BEBEBE" stroke-linecap="round"/>
+      <line x1="13.9236" y1="2.62978" x2="1.90277" y2="14.6506" stroke="#BEBEBE" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div class="modal-content">
+    <div class="modal-form" [formGroup]="modalForm" *ngIf="!requestSuccess">
+      <div class="modal-title">
+        {{ data.type === 'order' ? 'Заявка на услугу' : 'Закажите бесплатную консультацию!' }}
+      </div>
+      <div class="modal-inputs">
+
+        <div *ngIf="data.service">
+          <div class="modal-input">
+            <select name="service" class="modal-select" formControlName="service">
+              <option value="{{ service }}" *ngFor="let service of serviceNames">{{ service }}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="modal-input">
+          <input type="text" class="input" placeholder="Ваше имя"
+                 [ngStyle]="{'border-color': modalForm.get('name')?.invalid
+                 && (modalForm.get('name')?.dirty || modalForm.get('name')?.touched) ? 'red' : ''}"
+                 formControlName="name">
+          <div *ngIf="modalForm.get('name')?.invalid && (modalForm.get('name')?.dirty || modalForm.get('name')?.touched)">
+            <div class="invalid-message" *ngIf="modalForm.get('name')?.errors?.['required']">
+              Введите имя.
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-input">
+          <input type="text" class="input" placeholder="Ваш номер телефона"
+                 [ngStyle]="{'border-color': modalForm.get('phone')?.invalid
+                 && (modalForm.get('phone')?.dirty || modalForm.get('phone')?.touched) ? 'red' : ''}"
+                 formControlName="phone">
+          <div *ngIf="modalForm.get('phone')?.invalid && (modalForm.get('phone')?.dirty || modalForm.get('phone')?.touched)">
+            <div class="invalid-message" *ngIf="modalForm.get('phone')?.errors?.['required']">
+              Введите номер телефона.
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="button" [disabled]="modalForm.invalid" (click)="request()">
+        {{ data.type === 'order' ? 'Оставить заявку' : 'Заказать консультацию' }}
+      </button>
+      <div class="modal-error-message" *ngIf="requestError">Произошла ошибка при отправке формы, попробуйте еще раз</div>
+    </div>
+
+    <div class="modal-success" *ngIf="requestSuccess">
+      <div class="modal-title">Спасибо за вашу заявку!</div>
+      <div class="modal-success-text">Мы свяжемся с вами при первой же возможности.</div>
+      <button class="button modal-success-btn" [mat-dialog-close]="">Окей</button>
+    </div>
+
+  </div>
+</div>

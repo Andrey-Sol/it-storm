@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from "ngx-owl-carousel-o";
 import { ArticleType } from "../../../types/article.type";
 import { ArticleService } from "../../shared/services/article.service";
+import { ModalComponent } from "../../shared/components/modal/modal.component";
+import { MatDialog } from "@angular/material/dialog";
+import { SharedService } from "../../shared/services/shared.service";
+import { ServiceType } from "../../../types/service.type";
 
 @Component({
   selector: 'app-main',
@@ -52,32 +56,7 @@ export class MainComponent implements OnInit {
     nav: false
   }
 
-  services = [
-    {
-      image: 'service1.png',
-      name: 'Создание сайтов',
-      description: 'В краткие сроки мы создадим качественный и самое главное продающий сайт для продвижения Вашего бизнеса!',
-      price: '7 500'
-    },
-    {
-      image: 'service2.png',
-      name: 'Продвижение',
-      description: 'Вам нужен качественный SMM-специалист или грамотный таргетолог? Мы готовы оказать Вам услугу “Продвижения” на наивысшем уровне!',
-      price: '3 500'
-    },
-    {
-      image: 'service3.png',
-      name: 'Реклама',
-      description: 'Без рекламы не может обойтись ни один бизнес или специалист. Обращаясь к нам, мы гарантируем быстрый прирост клиентов за счёт правильно настроенной рекламы.',
-      price: '1 000'
-    },
-    {
-      image: 'service4.png',
-      name: 'Копирайтинг',
-      description: 'Наши копирайтеры готовы написать Вам любые продающие текста, которые не только обеспечат рост охватов, но и помогут выйти на новый уровень в продажах.',
-      price: ' 750'
-    },
-  ]
+  services: ServiceType[] = []
 
   reviews = [
     {
@@ -112,13 +91,20 @@ export class MainComponent implements OnInit {
     },
   ]
 
-  constructor(private articleService: ArticleService) { }
+  constructor(private articleService: ArticleService,
+              private sharedService: SharedService,
+              private modal: MatDialog) { }
 
   ngOnInit(): void {
     this.articleService.getPopularArticles()
       .subscribe((data: ArticleType[]) => {
         this.articles = data;
       })
+
+    this.services = this.sharedService.getServices();
   }
 
+  openModal(service: string) {
+    this.modal.open(ModalComponent, { data: { type: 'order', service: service }})
+  }
 }

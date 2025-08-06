@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from "@angular/material/dialog";
+import { ModalComponent } from "../../components/modal/modal.component";
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modal: MatDialog) { }
 
   ngOnInit(): void {
+  }
+
+  openModal() {
+    this.modal.open(ModalComponent, { data: { type: 'consultation' }})
   }
 
 }

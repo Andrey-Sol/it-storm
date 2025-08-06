@@ -1,0 +1,257 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+
+.article {
+  margin-top: 80px;
+  margin-bottom: 120px;
+  font-family: 'Montserrat',sans-serif;
+  font-style: normal;
+  font-weight: 400;
+
+  .container {
+
+    .article-breadcrumbs {
+      font-weight: 500;
+      font-size: 16px;
+      color: $blue-text-color;
+      margin-bottom: 60px;
+
+      a {
+        font-size: 16px;
+        color: $light-blue-color;
+        text-decoration: none;
+      }
+    }
+
+    .article-head {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 60px;
+
+      .article-info {
+        width: 607px;
+
+        .article-title {
+          @include head-lora-38;
+          margin-bottom: 40px;
+        }
+
+        .article-description {
+          @include head-montserrat-20;
+          line-height: 130%;
+        }
+      }
+
+      .article-image {
+        width: 527px;
+        height: 320px;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+
+    .article-main {
+      display: flex;
+      justify-content: space-between;
+
+      .article-block {
+
+        .article-text {
+          max-width: 818px;
+          margin-bottom: 60px;
+
+          h1 {
+            font-size: 26px;
+            color: $blue-text-color;
+          }
+
+          h3 {
+            @include head-montserrat-20;
+            margin-top: 40px;
+          }
+
+          p {
+            font-size: 14px;
+            color: $main-text-color;
+            line-height: 130%;
+          }
+        }
+
+        .article-share {
+          display: flex;
+          align-items: center;
+          margin-bottom: 120px;
+
+          .article-share-text {
+            font-weight: 500;
+            font-size: 14px;
+            color: $blue-text-color;
+            margin-right: 20px;
+          }
+
+          .article-share-links {
+
+            a {
+              margin-right: 13px;
+            }
+          }
+        }
+
+        .comments {
+          max-width: 818px;
+
+          .comments-title {
+            @include head-lora-38;
+            margin-bottom: 20px;
+          }
+
+          .comments-login {
+            margin-bottom: 60px;
+            font-size: 14px;
+            color: $main-text-color;
+
+            a {
+              color: $blue-text-color;
+            }
+          }
+
+          .comments-first {
+            font-size: 14px;
+            color: $main-text-color;
+          }
+
+          .comments-input {
+            margin-top: 40px;
+
+            textarea {
+              width: 815px;
+              height: 248px;
+              box-sizing: border-box;
+              padding: 20px 64px 20px 20px;
+              border: 1.5px solid $blue-text-color;
+              border-radius: 3px;
+              margin-bottom: 20px;
+
+              &::placeholder {
+                color: #A8ABA7;
+                font-family: 'Montserrat',sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+              }
+            }
+
+            button {
+              width: 422px;
+              height: 51px;
+              font-weight: 400;
+            }
+          }
+
+          .comments-list {
+            margin-top: 60px;
+
+            .comment {
+
+              .comment-head {
+                display: flex;
+                margin-bottom: 15px;
+
+                .comment-author-avatar {
+                  width: 60px;
+                  height: 60px;
+                  border-radius: 50%;
+                  border: 2px solid $blue-text-color;
+                  background-color: $light-blue-color;
+                  margin-right: 26px;
+                }
+
+                .comment-info {
+
+                  .comment-author-name {
+                    font-weight: 600;
+                    font-size: 18px;
+                    color: $blue-text-color;
+                    margin-bottom: 10px;
+                  }
+
+                  .comment-date {
+                    font-weight: 600;
+                    font-size: 14px;
+                    color: #BEBEBE;
+                  }
+                }
+              }
+
+              .comment-text {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 140%;
+                color: $main-text-color;
+                margin-bottom: 39px;
+              }
+
+              .comment-actions {
+                display: flex;
+
+                .comment-action {
+                  display: flex;
+                  align-items: center;
+                  margin-right: 15px;
+
+                  .comment-action-count {
+                    font-weight: 600;
+                    font-size: 14px;
+                    margin-bottom: 3px;
+                    margin-right: 3px;
+                    //color: #709FDC;
+                  }
+
+                  .comment-action-btn {
+                    cursor: pointer;
+                  }
+                }
+              }
+            }
+          }
+
+          .comments-load {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin-top: 60px;
+
+            span {
+              font-weight: 500;
+              font-size: 20px;
+              color: $blue-text-color;
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+
+      .article-related {
+        margin-top: 60px;
+
+        .article-related-title {
+          font-family: 'Lora', sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 26px;
+          color: $blue-text-color;
+          margin-bottom: 20px;
+        }
+
+        .article-related-items {
+          display: flex;
+          flex-direction: column;
+
+          article-card:first-child {
+            margin-bottom: 60px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+
+.modal {
+  box-sizing: border-box;
+  position: relative;
+  width: 727px;
+  height: 489px;
+  background: #FFFFFF;
+  border: 2px solid $blue-text-color;
+  border-radius: 10px;
+  padding: 30px;
+
+  .modal-close {
+    position: absolute;
+    cursor: pointer;
+    top: 30px;
+    right: 30px;
+  }
+
+  .modal-content {
+    margin-top: 65px;
+    display: flex;
+    justify-content: center;
+
+    .modal-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .modal-title {
+        @include head-lora-38;
+        margin-bottom: 20px;
+        width: 422px;
+        text-align: center;
+      }
+
+      .modal-inputs {
+        width: 422px;
+        margin-bottom: 20px;
+
+        .modal-input {
+          margin-bottom: 5px;
+
+          select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 422px;
+            color: $blue-text-color;
+            border: 2px solid $blue-text-color;
+            border-radius: 3px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            padding: 17px 20px;
+
+            option {
+              color: $blue-text-color;
+            }
+          }
+
+          .input {
+            width: 422px;
+          }
+        }
+      }
+
+      .button {
+        width: 422px;
+        height: 51px;
+      }
+
+      .modal-error-message {
+        font-size: 16px;
+        color: red;
+        margin-top: 15px;
+      }
+    }
+
+    .modal-success {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 70px;
+
+      .modal-title {
+        @include head-lora-38;
+        margin-bottom: 20px;
+      }
+
+      .modal-success-text {
+        font-family: 'Montserrat',sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        text-align: center;
+        color: #1E1A2B;
+        margin-bottom: 40px;
+      }
+
+      .modal-success-btn {
+        padding: 10px 20px;
+        background: $blue-text-color;
+        border-radius: 5px;
+        font-weight: 500;
+        font-size: 12px;
+      }
+    }
+  }
+}

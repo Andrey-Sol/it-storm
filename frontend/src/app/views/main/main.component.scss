@@ -78,18 +78,18 @@
         display: flex;
 
         a {
-          top: calc(50% - 5px);
+          top: calc(50% - 15px);
           display: flex;
           position: absolute;
           cursor: pointer;
           z-index: 2;
 
           &.move-backward {
-            left: 10px;
+            left: 11px;
           }
 
           &.move-forward {
-            right: 10px;
+            right: 11px;
           }
         }
       }

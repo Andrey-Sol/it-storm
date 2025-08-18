@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
 
   isLogged: boolean = false;
   activeLink: string = '';
-  user: UserInfoType = {id: '', name: 'user', email: ''}
+  user: UserInfoType = {id: '', name: '', email: ''}
 
   constructor(private authService: AuthService,
               private sharedService: SharedService,
@@ -27,8 +27,13 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.authService.isLogged$.subscribe((isLoggedIn: boolean) => {
       this.isLogged = isLoggedIn;
+      this.getUserInfo();
     });
 
+    this.getUserInfo();
+  }
+
+  getUserInfo() {
     this.sharedService.getUserInfo()
       .subscribe((data: UserInfoType | DefaultResponseType) => {
         if ((data as DefaultResponseType).error !== undefined) {
@@ -36,7 +41,7 @@ export class HeaderComponent implements OnInit {
         } else {
           this.user = data as UserInfoType;
         }
-    })
+      })
   }
 
   logout(): void {

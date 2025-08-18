@@ -6,7 +6,7 @@
           <div class="banner banner-offer">
             <div class="banner-type">Предложение месяца</div>
             <div class="banner-title">Продвижение в Instagram для вашего бизнеса <span>-15%</span>!</div>
-            <button class="button banner-button">Подробнее</button>
+            <button class="button banner-button" (click)="openModal('Продвижение')">Подробнее</button>
           </div>
         </ng-template>
         <ng-template carouselSlide>
@@ -14,7 +14,7 @@
             <div class="banner-type">Акция</div>
             <div class="banner-title">Нужен грамотный <span>копирайтер</span>?</div>
             <div class="banner-text">Весь декабрь у нас действует акция на работу копирайтера.</div>
-            <button class="button banner-button">Подробнее</button>
+            <button class="button banner-button" (click)="openModal('Копирайтинг')">Подробнее</button>
           </div>
         </ng-template>
         <ng-template carouselSlide>
@@ -22,7 +22,7 @@
             <div class="banner-type">Новость дня</div>
             <div class="banner-title"><span>6 место</span> в ТОП-10 SMM- <br> агенств Москвы!</div>
             <div class="banner-text">Мы благодарим каждого, кто голосовал за нас!</div>
-            <button class="button banner-button">Подробнее</button>
+            <button class="button banner-button" (click)="openModal('Реклама')">Подробнее</button>
           </div>
         </ng-template>
       </owl-carousel-o>

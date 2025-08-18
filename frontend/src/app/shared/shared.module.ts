@@ -7,6 +7,7 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { ModalComponent } from './components/modal/modal.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { MatDialogModule } from "@angular/material/dialog";
+import { CloseFilterDirective } from "./directives/close-filter.directive";
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { MatDialogModule } from "@angular/material/dialog";
     ArticleCardComponent,
     LoaderComponent,
     ModalComponent,
+    CloseFilterDirective,
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { MatDialogModule } from "@angular/material/dialog";
   ],
   exports: [
     ArticleCardComponent,
-    LoaderComponent
+    LoaderComponent,
+    CloseFilterDirective
   ]
 })
 export class SharedModule { }

@@ -61,5 +61,4 @@ export class ModalComponent implements OnInit {
         })
     }
   }
-
 }

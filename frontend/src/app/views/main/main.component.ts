@@ -28,7 +28,6 @@ export class MainComponent implements OnInit {
       0: {
         items: 1
       },
-
     },
     nav: false
   }

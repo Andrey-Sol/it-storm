@@ -6,6 +6,21 @@ html, body {
   padding: 0;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
+  scroll-behavior: smooth;
+}
+
+app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+app-login, app-signup {
+  flex-grow: 1;
+}
+
+app-footer {
+  flex-shrink: 0;
 }
 
 .container {
@@ -57,4 +72,28 @@ html, body {
 .mat-dialog-container {
   padding: 0 !important;
   border-radius: 10px !important;
+}
+
+.owl-theme .owl-nav.disabled+.owl-dots {
+  position: absolute;
+  left: calc(50% - 39px);
+  bottom: 15px;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+  border: 1px solid #FFFFFF;
+  background: transparent;
+}
+
+.owl-theme .owl-dots .owl-dot:hover span {
+  border: 1px solid #FFFFFF;
+  background: transparent;
+}
+
+.owl-theme .owl-dots .owl-dot.active span {
+  background: #FFFFFF;
+}
+
+.owl-theme .owl-dots .owl-dot.active:hover span {
+  background: #FFFFFF;
 }

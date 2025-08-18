@@ -17,5 +17,4 @@ export class FooterComponent implements OnInit {
   openModal() {
     this.modal.open(ModalComponent, { data: { type: 'consultation' }})
   }
-
 }

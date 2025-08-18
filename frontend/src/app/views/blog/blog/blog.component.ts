@@ -5,7 +5,7 @@ import { CategoryType } from "../../../../types/category.type";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ActiveParamsType } from "../../../../types/active-params.type";
 import { AppliedFilterType } from "../../../../types/applied-filter.type";
-import { debounceTime } from "rxjs";
+import { switchMap } from "rxjs";
 
 @Component({
   selector: 'app-blog',
@@ -28,14 +28,14 @@ export class BlogComponent implements OnInit {
 
   ngOnInit(): void {
     this.articleService.getCategories()
-      .subscribe(data => {
-        this.categories = data;
-        this.activatedRoute.queryParams
-          .pipe(debounceTime(500))
-          .subscribe(params => {
-            this.processParams(params);
-          });
-      });
+      .pipe(
+        switchMap(categories => {
+          this.categories = categories;
+          return this.activatedRoute.queryParams;
+        })
+      ).subscribe(params => {
+        this.processParams(params);
+    })
   }
 
   private processParams(params: {[key: string]: string}): void {

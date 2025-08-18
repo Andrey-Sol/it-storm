@@ -27,6 +27,7 @@ header.header {
       li a {
         color: $main-text-color;
         text-decoration: none;
+        cursor: pointer;
 
         &.active {
           color: $blue-text-color;

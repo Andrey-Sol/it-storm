@@ -5,6 +5,7 @@ import { Router } from "@angular/router";
 import { UserInfoType } from "../../../../types/user-info.type";
 import { SharedService } from "../../services/shared.service";
 import { DefaultResponseType } from "../../../../types/default-response.type";
+import { ScrollService } from "../../services/scroll.service";
 
 @Component({
   selector: 'app-header',
@@ -15,10 +16,11 @@ export class HeaderComponent implements OnInit {
 
   isLogged: boolean = false;
   activeLink: string = '';
-  user: UserInfoType = {id: '', name: '', email: ''}
+  userName: string = '';
 
   constructor(private authService: AuthService,
               private sharedService: SharedService,
+              private scrollService: ScrollService,
               private _snackBar: MatSnackBar,
               private router: Router) {
     this.isLogged = this.authService.getIsLoggedIn();
@@ -27,10 +29,13 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.authService.isLogged$.subscribe((isLoggedIn: boolean) => {
       this.isLogged = isLoggedIn;
-      this.getUserInfo();
+      if (this.isLogged) {
+        this.getUserInfo();
+      }
     });
-
-    this.getUserInfo();
+    if (this.isLogged) {
+      this.getUserInfo();
+    }
   }
 
   getUserInfo() {
@@ -39,7 +44,7 @@ export class HeaderComponent implements OnInit {
         if ((data as DefaultResponseType).error !== undefined) {
           throw new Error((data as DefaultResponseType).message);
         } else {
-          this.user = data as UserInfoType;
+          this.userName = (data as UserInfoType).name;
         }
       })
   }
@@ -63,7 +68,8 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
-  changeActiveLink(fragment: string) {
+  scrollToFragment(fragment: string): void {
     this.activeLink = fragment;
+    this.scrollService.scrollPage(fragment);
   }
 }
